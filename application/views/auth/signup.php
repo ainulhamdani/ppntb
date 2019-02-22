@@ -8,12 +8,12 @@
           </div>
         </div>
         <div class="d-flex justify-content-center form_container">
-          <form id="login" action="<?php echo base_url() ?>auth/login" method="post">
-            <div class="input-group mb-3">
+          <form id="login" action="<?php echo base_url() ?>auth/signup" method="post">
+            <div class="input-group mb-2">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
-              <input type="text" name="identity" class="form-control input_user" value="" placeholder="username">
+              <input type="text" name="identity" class="form-control input_user" value="" placeholder="email">
             </div>
             <div class="input-group mb-2">
               <div class="input-group-append">
@@ -21,23 +21,21 @@
               </div>
               <input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
             </div>
-            <div class="form-group">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" name="remember" class="custom-control-input" id="customControlInline">
-                <label class="custom-control-label" for="customControlInline">Remember me</label>
+            <div class="input-group mb-2">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
+              <input type="password" name="password2" class="form-control input_pass" value="" placeholder="re-type password">
             </div>
           </form>
         </div>
+        <div class="d-flex justify-content-center" id="infoMessage"><?php echo $message;?></div>
         <div class="d-flex justify-content-center mt-3 login_container">
-          <button type="submit" form="login" name="button" class="btn login_btn">Login</button>
+          <button type="submit" form="login" name="button" class="btn login_btn">Sign Up</button>
         </div>
         <div class="mt-4">
           <div class="d-flex justify-content-center links">
-            Don't have an account? <a href="signup" class="ml-2">Sign Up</a>
-          </div>
-          <div class="d-flex justify-content-center links">
-            <a href="forgot_password">Forgot your password?</a>
+            Already have an account? <a href="<?php echo base_url() ?>auth/login" class="ml-2">Login</a>
           </div>
         </div>
       </div>

@@ -59,6 +59,44 @@ class Auth extends CI_Controller
 		}
 	}
 
+	public function signup(){
+
+		// validate form input
+		$this->form_validation->set_rules('identity', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');
+		$this->form_validation->set_rules('password', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
+		$this->form_validation->set_rules('password2', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
+		if ($this->form_validation->run() === TRUE)
+		{
+			// check to see if the user is register in
+			if($this->input->post('password')!=$this->input->post('password2')){
+				$this->session->set_flashdata('message', "Password not match");
+				redirect('auth/signup', 'refresh');
+			}
+			if ($this->ion_auth->register($this->input->post('identity'), $this->input->post('password'), $this->input->post('identity')))
+			{
+				//if the register is successful
+				//redirect them back to the home page
+				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				redirect('auth/login', 'refresh');
+			}
+			else
+			{
+				// if the register was un-successful
+				// redirect them back to the login page
+				$this->session->set_flashdata('message', $this->ion_auth->errors());
+				redirect('auth/signup', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
+			}
+		}
+		else
+		{
+			// the user is not register in so display the login page
+			// set the flash data error message if there is one
+			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'signup', $this->data);
+		}
+	}
+
 	/**
 	 * Log the user in
 	 */
