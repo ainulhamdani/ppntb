@@ -77,7 +77,7 @@ class Auth extends CI_Controller
 				//if the register is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('auth/login', 'refresh');
+				redirect('auth/signup_success', 'refresh');
 			}
 			else
 			{
@@ -95,6 +95,10 @@ class Auth extends CI_Controller
 
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'signup', $this->data);
 		}
+	}
+
+	public function signup_success(){
+		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'signup_success', $this->data);
 	}
 
 	/**
