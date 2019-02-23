@@ -10,12 +10,14 @@
 	</div>
 	<hr>
 	<div class="row card">
-		<form method="post" enctype='multipart/form-data'>
+		<form method="post" enctype='multipart/form-data' action="<?php echo base_url() ?>user/profilupdate">
 			<center><h4>UPDATE PROFIL</h4></center>
 			<div class="profimg">
-				<img src="<?php echo base_url()."assets/img/foto/".$data->foto ?>" width="150" height="200">
+				<img src="<?php echo base_url()."assets/img/foto/".$data->foto."?".$data->foto_updated ?>" width="150" height="200">
 				<br>
-				<input type="file" name="foto" value="<?=$data->foto?>" style="width: 150px;">
+				<input type="file" name="foto" style="width: 150px;">
+				<br>
+				<span style="font-size:12px"><center>Max image size is 250Kb</center></span>
 			</div>
 			<div class="card informasi">
 				<h5>INFORMASI DATA DIRI</h5>
@@ -23,7 +25,7 @@
 					<tr>
 						<td width="35%">Email</td>
 						<td width="2%">:</td>
-						<td><input class="form-control" type="text" name="email" value="<?=$email?>" disable readonly></td>
+						<td><input class="form-control" type="text" name="" value="<?=$email?>" disable readonly></td>
 					</tr>
 					<tr>
 						<td>Nama Lengkap</td>

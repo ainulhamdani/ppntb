@@ -88,6 +88,49 @@ class User extends CI_Controller {
 		
 	}
 
+	public function profilupdate(){
+		$id = $this->ion_auth->get_user_id();
+		$data = $this->input->post();
+		$keys = array_keys($data);
+		$last_key = end($keys);
+		$query = "UPDATE users_info SET ";
+		foreach ($data as $key => $value) {
+			$query = $query.$key."='".$value."'";
+			if ($key !== $last_key) {
+				$query = $query.", ";
+			}
+		}
+		$query = $query." WHERE id=$id";
+
+		$this->db->query($query);
+
+		if ($_FILES['foto']['name']!="") {
+			$config['upload_path']          = './assets/img/foto/';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 250;
+            $config['overwrite']             = TRUE;
+            $config['file_name']             = $id.".jpg";
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('foto'))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+                    $this->session->set_flashdata('message', $error['error']);
+                    redirect('user/profil/update', 'refresh');
+            }
+            else
+            {
+                    $data = array('upload_data' => $this->upload->data());
+                    $file_name = $data['upload_data']['file_name'];
+                    $time = time();
+                    $this->db->query("UPDATE users_info SET foto='$file_name',foto_updated='$time' WHERE id = $id");
+                    redirect('user/profil/update', 'refresh');
+            }
+		}
+		redirect('user/profil/update', 'refresh');
+	}
+
 
 	public function daftar()
 	{
