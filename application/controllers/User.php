@@ -39,7 +39,10 @@ class User extends CI_Controller {
 			redirect('dashboard', 'refresh');
 		}else{
 			if ($this->uri->segment(3, "")=="update") {
-				$this->load->view('user/profilupdate');
+				$id = $this->ion_auth->get_user_id();
+				$data['email'] = $this->db->query("SELECT email FROM users WHERE id=$id")->row()->email;
+				$data['data'] = $this->db->query("SELECT * FROM users_info WHERE id=$id")->row();
+				$this->load->view('user/profilupdate',$data);
 			}elseif ($this->uri->segment(3, "")=="password") {
 				$this->load->library( 'form_validation');
 				$user = $this->ion_auth->user()->row();
@@ -74,7 +77,10 @@ class User extends CI_Controller {
 				];
 				$this->load->view('user/gantipassword',$this->data);
 			}else{
-				$this->load->view('user/profil');
+				$id = $this->ion_auth->get_user_id();
+				$data['email'] = $this->db->query("SELECT email FROM users WHERE id=$id")->row()->email;
+				$data['data'] = $this->db->query("SELECT * FROM users_info WHERE id=$id")->row();
+				$this->load->view('user/profil',$data);
 			}
 			
 			

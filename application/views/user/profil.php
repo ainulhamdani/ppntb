@@ -11,85 +11,85 @@
 	<hr>
 	<div class="row card">
 		<div>
-			<center><h4>PROFIL AINUL HAMDANI</h4></center>
-			<img class="profimg" src="" width="150" height="200">
+			<center><h4>PROFIL <?=strtoupper($data->nama_lengkap)?></h4></center>
+			<img class="profimg" src="<?php echo base_url()."assets/img/foto/".$data->foto ?>" width="150" height="200">
 			<div class="card informasi">
 				<h5>INFORMASI DATA DIRI</h5>
 				<table>
 					<tr>
-						<td>Email</td>
-						<td>:</td>
-						<td>hamdani.ainul@gmail.com</td>
+						<td width="35%">Email</td>
+						<td width="2%">:</td>
+						<td><?=$email?></td>
 					</tr>
 					<tr>
 						<td>Nama Lengkap</td>
 						<td>:</td>
-						<td>Ainul Hamdani</td>
+						<td><?=$data->nama_lengkap?></td>
 					</tr>
 					<tr>
 						<td>Nama Panggilan</td>
 						<td>:</td>
-						<td>Dani</td>
+						<td><?=$data->nama_panggilan?></td>
 					</tr>
 					<tr>
 						<td>Nomor KTP</td>
 						<td>:</td>
-						<td>5201080607920001</td>
+						<td><?=$data->no_ktp?></td>
 					</tr>
 					<tr>
 						<td>Nomor Induk Pegawai (Khusus PNS)</td>
 						<td>:</td>
-						<td></td>
+						<td><?=$data->no_nip?></td>
 					</tr>
 					<tr>
 						<td>Jenis Kelamin</td>
 						<td>:</td>
-						<td>Laki-laki</td>
+						<td><?=$data->jk?></td>
 					</tr>
 					<tr>
 						<td>Tempat Lahir</td>
 						<td>:</td>
-						<td>Jurumapin</td>
+						<td><?=$data->tempat_lahir?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Lahir</td>
 						<td>:</td>
-						<td>06 Juli 1992</td>
+						<td><?=$data->tanggal_lahir?></td>
 					</tr>
 					<tr>
 						<td>Alamat</td>
 						<td>:</td>
-						<td>Perumahan Pepabri Blok C No. 33 Perampuan</td>
+						<td><?=$data->alamat?></td>
 					</tr>
 					<tr>
 						<td>Kabupaten/Kota</td>
 						<td>:</td>
-						<td>KAB. LOMBOK BARAT</td>
+						<td><?=$data->kab_kota?></td>
 					</tr>
 					<tr>
 						<td>Kode Pos</td>
 						<td>:</td>
-						<td>83361</td>
+						<td><?=$data->kode_pos?></td>
 					</tr>
 					<tr>
 						<td>Handphone</td>
 						<td>:</td>
-						<td>6281916029525</td>
+						<td><?=$data->handphone?></td>
 					</tr>
 					<tr>
 						<td>Telepon</td>
 						<td>:</td>
-						<td></td>
+						<td><?=$data->telepon?></td>
 					</tr>
 					<tr>
 						<td>Status Menikah</td>
 						<td>:</td>
-						<td>Menikah</td>
+						<td><?=$data->status_nikah?></td>
 					</tr>
 					<tr>
 						<td>Jenis Pekerjaan</td>
 						<td>:</td>
-						<td>Swasta</td>
+						<td><?=$data->pekerjaan?></td>
 					</tr>
 				</table>
 			</div>
@@ -97,19 +97,19 @@
 				<h5>INFORMASI PENDIDIKAN</h5>
 				<table>
 					<tr>
-						<td>Universitas Asal</td>
-						<td>:</td>
-						<td>Universitas Mataram</td>
+						<td width="30%">Universitas Asal</td>
+						<td width="2%">:</td>
+						<td><?=$data->universitas?></td>
 					</tr>
 					<tr>
 						<td>Prodi</td>
 						<td>:</td>
-						<td>Teknik Elektro</td>
+						<td><?=$data->prodi?></td>
 					</tr>
 					<tr>
 						<td>IPK</td>
 						<td>:</td>
-						<td>3.57</td>
+						<td><?=$data->ipk?></td>
 					</tr>
 				</table>
 			</div>
@@ -117,39 +117,39 @@
 				<h5>INFORMASI KELUARGA</h5>
 				<table>
 					<tr>
-						<td>Nama Bapak</td>
-						<td>:</td>
-						<td>Ibrahim</td>
+						<td width="30%">Nama Bapak</td>
+						<td width="2%">:</td>
+						<td><?=$data->nama_bapak?></td>
 					</tr>
 					<tr>
 						<td>Pekerjaan Bapak</td>
 						<td>:</td>
-						<td>Ahli Professional</td>
+						<td><?=$data->pekerjaan_bapak?></td>
 					</tr>
 					<tr>
 						<td>Pendidikan Bapak</td>
 						<td>:</td>
-						<td>S2</td>
+						<td><?=$data->pendidikan_bapak?></td>
 					</tr>
 					<tr>
 						<td>Pendapatan Bapak</td>
 						<td>:</td>
-						<td>Rp 4,000,000</td>
+						<td>Rp. <?=$data->pendapatan_bapak?></td>
 					</tr>
 					<tr>
 						<td>Alamat Bapak</td>
 						<td>:</td>
-						<td>Perum Perembun Asri Blok K5 Perampuan</td>
+						<td><?=$data->alamat_bapak?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Lahir Bapak</td>
 						<td>:</td>
-						<td>1963-06-08</td>
+						<td><?=$data->tl_bapak?></td>
 					</tr>
 					<tr>
 						<td>No Hp/Telepon Bapak</td>
 						<td>:</td>
-						<td></td>
+						<td><?=$data->no_hp_bapak?></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -159,72 +159,72 @@
 					<tr>
 						<td>Nama Ibu</td>
 						<td>:</td>
-						<td>Latifa</td>
+						<td><?=$data->nama_ibu?></td>
 					</tr>
 					<tr>
 						<td>Pekerjaan Ibu</td>
 						<td>:</td>
-						<td>Tidak Bekerja</td>
+						<td><?=$data->pekerjaan_ibu?></td>
 					</tr>
 					<tr>
 						<td>Pendidikan Ibu</td>
 						<td>:</td>
-						<td>SMA</td>
+						<td><?=$data->pendidikan_ibu?></td>
 					</tr>
 					<tr>
 						<td>Pendapatan Ibu</td>
 						<td>:</td>
-						<td>Rp 0</td>
+						<td>Rp. <?=$data->pendapatan_ibu?></td>
 					</tr>
 					<tr>
 						<td>Alamat Ibu</td>
 						<td>:</td>
-						<td>Perumahan Pepabri Blok C No. 33 Perampuan</td>
+						<td><?=$data->alamat_ibu?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Lahir Ibu</td>
 						<td>:</td>
-						<td>1967-06-14</td>
+						<td><?=$data->tl_ibu?></td>
 					</tr>
 					<tr>
 						<td>No Hp/Telepon Ibu</td>
 						<td>:</td>
-						<td></td>
+						<td><?=$data->no_hp_ibu?></td>
 					</tr>
 					<tr>
 						<td>Nama Suami/Istri</td>
 						<td>:</td>
-						<td>Haryani</td>
+						<td><?=$data->nama_pasangan?></td>
 					</tr>
 					<tr>
 						<td>Pekerjaan Suami/Istri</td>
 						<td>:</td>
-						<td>Tidak Bekerja</td>
+						<td><?=$data->pekerjaan_pasangan?></td>
 					</tr>
 					<tr>
 						<td>Pendidikan Suami/Istri</td>
 						<td>:</td>
-						<td>SMK</td>
+						<td><?=$data->pendidikan_pasangan?></td>
 					</tr>
 					<tr>
 						<td>Pendapatan Suami/Istri</td>
 						<td>:</td>
-						<td>Rp 0</td>
+						<td>Rp. <?=$data->pendapatan_pasangan?></td>
 					</tr>
 					<tr>
 						<td>Alamat Suami/Istri</td>
 						<td>:</td>
-						<td>Perum Perembun Asri Blok K5 Perampuan</td>
+						<td><?=$data->alamat_pasangan?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Lahir Suami/Istri</td>
 						<td>:</td>
-						<td>1991-05-12</td>
+						<td><?=$data->tl_pasangan?></td>
 					</tr>
 					<tr>
 						<td>No Hp/Telepon Suami/Istri</td>
 						<td>:</td>
-						<td></td>
+						<td><?=$data->no_hp_pasangan?></td>
 					</tr>
 				</table>
 			</div>

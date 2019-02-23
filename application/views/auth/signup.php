@@ -13,6 +13,12 @@
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
+              <input type="text" name="fullname" class="form-control input_user" value="" placeholder="nama lengkap">
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              </div>
               <input type="text" name="identity" class="form-control input_user" value="" placeholder="email">
             </div>
             <div class="input-group mb-2">

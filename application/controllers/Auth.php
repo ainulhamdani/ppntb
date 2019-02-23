@@ -62,6 +62,7 @@ class Auth extends CI_Controller
 	public function signup(){
 
 		// validate form input
+		$this->form_validation->set_rules('fullname', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');
 		$this->form_validation->set_rules('identity', str_replace(':', '', $this->lang->line('login_identity_label')), 'required');
 		$this->form_validation->set_rules('password', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
 		$this->form_validation->set_rules('password2', str_replace(':', '', $this->lang->line('login_password_label')), 'required');
@@ -72,10 +73,13 @@ class Auth extends CI_Controller
 				$this->session->set_flashdata('message', "Password not match");
 				redirect('auth/signup', 'refresh');
 			}
-			if ($this->ion_auth->register($this->input->post('identity'), $this->input->post('password'), $this->input->post('identity')))
+			$id = $this->ion_auth->register($this->input->post('identity'), $this->input->post('password'), $this->input->post('identity'));
+			if ($id)
 			{
 				//if the register is successful
 				//redirect them back to the home page
+				$fullname = $this->input->post('fullname');
+				$this->db->query("INSERT INTO users_info (id,nama_lengkap) VALUES($id,'$fullname')");
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 				redirect('auth/signup_success', 'refresh');
 			}
