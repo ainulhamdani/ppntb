@@ -5,8 +5,8 @@
 		<img src="<?php echo base_url() ?>assets/img/cover.jpg" class="cover img-fluid" alt="Cover">
 	</div>
 
-	<div class="row mb-2">
-		
+	<div class="row card">
+		<center><h1>Masih dalam pengembangan</h1></center>
 	</div>
 </div>
 <?php $this->load->view('user' . DIRECTORY_SEPARATOR . 'footer'); ?>
