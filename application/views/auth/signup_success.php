@@ -9,7 +9,7 @@
         </div>
         <div class="d-flex justify-content-center form_container">
             <div class="d-flex justify-content-center links">
-            You are successfully registered, please login.
+            You are successfully registered, please check your email for activation.
           </div>
         </div>
         <div class="d-flex justify-content-center mt-3 login_container">
