@@ -78,6 +78,9 @@ class Auth extends CI_Controller
 			{
 				//if the register is successful
 				//redirect them back to the home page
+				if (is_array($id)) {
+					$id = $id['id'];
+				}
 				$fullname = $this->input->post('fullname');
 				$this->db->query("INSERT INTO users_info (id,nama_lengkap) VALUES($id,'$fullname')");
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
